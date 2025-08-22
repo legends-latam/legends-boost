@@ -31,6 +31,26 @@ const Index = () => {
         style={{ width: `${scrollProgress}%` }}
       />
 
+      {/* Test Landing Page */}
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="font-orbitron font-black text-4xl md:text-6xl mb-6 text-glow">
+            ¿Por Qué Sigues En El Mismo{' '}
+            <span className="bg-gradient-to-r from-neon-green to-neon-cyan bg-clip-text text-transparent">
+              Rank
+            </span>{' '}
+            Después De 1000+ Partidas?
+          </h1>
+          <p className="text-xl text-text-secondary max-w-4xl mx-auto mb-8">
+            La IA analiza <span className="text-neon-cyan font-bold">+50 variables por partida</span> para 
+            mostrarte EXACTAMENTE qué te impide mejorar.
+          </p>
+          <button className="btn-hero pulse-glow">
+            ANALIZA TU JUEGO GRATIS AHORA
+          </button>
+        </div>
+      </div>
+
       {/* Landing Page Sections */}
       <HeroSection />
       <ProblemSolutionSection />
