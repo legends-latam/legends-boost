@@ -18,6 +18,11 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'orbitron': ['Orbitron', 'sans-serif'],
+				'inter': ['Inter', 'sans-serif'],
+				'mono': ['JetBrains Mono', 'monospace'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -52,16 +57,20 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+				// Gaming Neon Colors
+				'neon-green': 'hsl(var(--neon-green))',
+				'neon-purple': 'hsl(var(--neon-purple))',
+				'neon-cyan': 'hsl(var(--neon-cyan))',
+				'neon-red': 'hsl(var(--neon-red))',
+				'neon-yellow': 'hsl(var(--neon-yellow))',
+				// Backgrounds
+				'bg-primary': 'hsl(var(--bg-primary))',
+				'bg-secondary': 'hsl(var(--bg-secondary))',
+				'bg-tertiary': 'hsl(var(--bg-tertiary))',
+				// Text
+				'text-primary': 'hsl(var(--text-primary))',
+				'text-secondary': 'hsl(var(--text-secondary))',
+				'text-muted': 'hsl(var(--text-muted))',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
