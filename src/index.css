@@ -78,7 +78,7 @@
 @layer components {
   /* Gaming Glass Cards */
   .glass-card {
-    @apply relative backdrop-blur-md bg-glass border border-white/10 rounded-xl overflow-hidden;
+    @apply relative backdrop-blur-md border border-white/10 rounded-xl overflow-hidden;
     background: rgba(255, 255, 255, 0.05);
     box-shadow: 
       0 8px 32px rgba(0, 0, 0, 0.4),
