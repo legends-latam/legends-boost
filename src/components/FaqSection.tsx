@@ -3,7 +3,7 @@ import { ChevronDown, Shield, Zap, Globe, Clock, CheckCircle, HelpCircle } from 
 
 const faqs = [
   {
-    question: "¿Cómo funciona exactamente la IA?",
+    question: "¿Cómo funciona exactamente la IA de Legends OS?",
     answer: "Nuestra IA analiza cada acción en tus replays: movimientos, decisiones, timings, eficiencia. Compara con patrones de jugadores exitosos de tu mismo nivel y rango superior, identificando exactamente dónde pierdes ventaja. Procesamos +50 variables por partida incluyendo GPM, XPM, patrones de muerte, eficiencia de farmeo, positioning en teamfights y mucho más.",
     icon: Zap
   },
@@ -123,14 +123,9 @@ const FaqSection = () => {
               <button className="btn-hero">
                 Únete a Discord
               </button>
-              <button className="btn-secondary">
+              <button className="btn-secondary" onClick={() => window.open('https://api.whatsapp.com/send?phone=56973873942&text=Legends%20OS%20esta%20para%20apoyarte%20en%20tu%20plan%20de%20entrenamiento%20personalizado')}>
                 WhatsApp Support
               </button>
-            </div>
-            
-            <div className="mt-6 text-sm text-text-muted">
-              <p>Email: contact@legendslatam.com</p>
-              <p>Tiempo de respuesta promedio: 2 horas</p>
             </div>
           </div>
         </div>

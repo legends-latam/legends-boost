@@ -9,7 +9,8 @@ const testimonials = [
     time: "2 meses",
     quote: "Subí de Guardian II a Cruzado V en 2 meses. El análisis de IA es increíble, me mostró errores que ni sabía que tenía.",
     stats: "+68% winrate",
-    avatar: "C"
+    avatar: "C",
+    stars: 4,
   },
   {
     name: "María G.",
@@ -18,7 +19,8 @@ const testimonials = [
     time: "6 semanas",
     quote: "Por fin entiendo mis errores de farming. Los drills personalizados son exactamente lo que necesitaba.",
     stats: "+245 MMR",
-    avatar: "M"
+    avatar: "M",
+    stars: 5,
   },
   {
     name: "Juan P.",
@@ -27,7 +29,8 @@ const testimonials = [
     time: "3 meses", 
     quote: "El análisis es más detallado que un coach de $100/hora. La comunidad PRO está llena de gente que realmente mejora.",
     stats: "+87% mejora",
-    avatar: "J"
+    avatar: "J",
+    stars: 4,
   },
   {
     name: "Ana R.",
@@ -36,7 +39,8 @@ const testimonials = [
     time: "45 días",
     quote: "Como mujer gamer, encontré una comunidad que me respeta y me ayuda. Mis friends no pueden creer mi progreso.",
     stats: "+156% KDA",
-    avatar: "A"
+    avatar: "A",
+    stars: 4,
   },
   {
     name: "Diego S.",
@@ -45,7 +49,8 @@ const testimonials = [
     time: "8 semanas",
     quote: "Los $9 USD valen cada centavo. Mi team ahora me pide consejos en vez de flamerme. Legends cambió mi gameplay.",
     stats: "+73% winrate",
-    avatar: "D"
+    avatar: "D",
+    stars: 5,
   },
   {
     name: "Isabella F.",
@@ -54,7 +59,8 @@ const testimonials = [
     time: "4 meses",
     quote: "Llegué a Divine gracias a Legends. Ahora estoy considerando competir en torneos. El sueño se hace realidad.",
     stats: "+890 MMR",
-    avatar: "I"
+    avatar: "I",
+    stars: 5,
   }
 ];
 
@@ -144,10 +150,10 @@ const TestimonialsSection = () => {
 
                 {/* Rating */}
                 <div className="flex items-center gap-1 mt-4 pt-4 border-t border-white/10">
-                  {[...Array(5)].map((_, i) => (
+                  {[...Array(testimonial.stars)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-neon-yellow text-neon-yellow" />
                   ))}
-                  <span className="ml-2 text-sm text-text-secondary">5.0</span>
+                  <span className="ml-2 text-sm text-text-secondary">{testimonial.stars}.0</span>
                 </div>
               </div>
             ))}
@@ -171,54 +177,7 @@ const TestimonialsSection = () => {
             </div>
           </div>
         </div>
-
-        {/* Stats Section */}
-        <div className="mt-20 max-w-5xl mx-auto">
-          <div className="glass-card p-8">
-            <h3 className="font-orbitron font-bold text-2xl text-center mb-8">
-              Resultados Que <span className="text-neon-green">Hablan Por Sí Solos</span>
-            </h3>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-neon-green mb-2">92%</div>
-                <div className="text-sm text-text-secondary">Usuarios satisfechos</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-neon-cyan mb-2">68%</div>
-                <div className="text-sm text-text-secondary">Mejora promedio</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-neon-purple mb-2">2.3x</div>
-                <div className="text-sm text-text-secondary">Más rápido que solo</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-neon-yellow mb-2">15,247</div>
-                <div className="text-sm text-text-secondary">Jugadores activos</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Social Proof Live */}
-        <div className="mt-12 text-center">
-          <div className="inline-flex items-center gap-2 glass-card px-6 py-3">
-            <div className="flex -space-x-2">
-              {['C', 'M', 'J', 'A'].map((letter, index) => (
-                <div
-                  key={index}
-                  className="w-8 h-8 rounded-full bg-gradient-to-r from-neon-green to-neon-cyan flex items-center justify-center text-black text-sm font-bold border-2 border-bg-primary"
-                >
-                  {letter}
-                </div>
-              ))}
-            </div>
-            <span className="text-sm text-text-secondary">
-              +387 jugadores se unieron esta semana
-            </span>
-            <TrendingUp className="w-4 h-4 text-neon-green" />
-          </div>
-        </div>
+        
       </div>
     </section>
   );

@@ -1,20 +1,50 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from '@/components/ui/input';
-import { Play, Shield, Users, TrendingUp } from 'lucide-react';
+import { Play, Shield, Users, TrendingUp, Star,
+  Trophy, 
+  Zap,  
+  BarChart3, 
+  GamepadIcon,
+  CheckCircle,
+  Twitter,
+  MessageCircle,
+  Youtube,
+  Twitch
+ } from 'lucide-react';
 import heroBackground from '@/assets/hero-bg.jpg';
-import legendsLogo from '@/assets/legends-logo.png';
+import legendsLogo from '@/assets/logo.png';
 
 const HeroSection = () => {
   const [userCount, setUserCount] = useState(15247);
   const [email, setEmail] = useState('');
-
+  const [playerCount, setPlayerCount] = useState(15247);
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setUserCount(prev => prev + Math.floor(Math.random() * 3));
     }, 3000);
-    return () => clearInterval(interval);
+
+    // Simulate live player counter
+    const intervalCounter = setInterval(() => {
+      setPlayerCount(prev => prev + Math.floor(Math.random() * 3));
+    }, 3000);
+    return () => {
+      clearInterval(interval);
+      clearInterval(intervalCounter);
+    }
   }, []);
+
+  const AnimatedCounter = ({ value, suffix }: { value: number; suffix: string }) => (
+    <span className="tabular-nums font-bold text-2xl md:text-3xl text-glow animate-glow-pulse">
+      {value.toLocaleString()}{suffix}
+    </span>
+  );
+
+  const openDashboard = () => {
+    window.location.href = 'https://stephanoapiolaza.github.io/legends-core/';
+  }
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -48,8 +78,8 @@ const HeroSection = () => {
       {/* Main Content */}
       <div className="relative z-20 container mx-auto px-4 text-center">
         {/* Logo */}
-        <div className="flex justify-center mb-8">
-          <img src={legendsLogo} alt="Legends" className="h-20 w-auto glow-green" />
+        <div className="flex justify-center mb-8 mt-3">
+          <img src={legendsLogo} alt="Legends" className="h-20 w-auto" />
         </div>
 
         {/* Headline */}
@@ -58,12 +88,12 @@ const HeroSection = () => {
           <span className="bg-gradient-to-r from-neon-green to-neon-cyan bg-clip-text text-transparent">
             Rank
           </span>{' '}
-          Después De 1000+ Partidas?
+          Después De Muchas +Partidas?
         </h1>
 
         {/* Subheadline */}
         <p className="text-lg md:text-xl text-text-secondary max-w-4xl mx-auto mb-8 leading-relaxed">
-          La IA analiza <span className="text-neon-cyan font-bold">+50 variables por partida</span> para 
+          Legends OS analiza <span className="text-neon-cyan font-bold">+50 variables por partida</span> para 
           mostrarte EXACTAMENTE qué te impide mejorar. Sin rodeos, sin guías genéricas, 
           solo <span className="text-neon-green font-bold">TU plan personalizado</span>.
         </p>
@@ -89,59 +119,52 @@ const HeroSection = () => {
         </div>
         <p className="text-sm text-text-muted mb-12">Más juegos próximamente</p>
 
-        {/* CTA Section */}
-        <div className="max-w-md mx-auto mb-8">
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Input
-              type="email"
-              placeholder="tu-email@ejemplo.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="bg-bg-tertiary border-white/20 text-white placeholder:text-text-muted"
-            />
-            <Button className="btn-hero pulse-glow whitespace-nowrap">
-              ANALIZA TU JUEGO GRATIS
+        {/* Secondary CTA */}
+        <div className="mb-12">
+          <Button className="btn-hero pulse-glow whitespace-nowrap">
+              Analiza mi nivel Gratis
             </Button>
-          </div>
           <p className="text-sm text-text-muted mt-2 flex items-center justify-center gap-2">
             <Shield className="w-4 h-4" />
-            No pedimos contraseña de Steam
+            Te autenticas directamente en Steam
           </p>
         </div>
 
-        {/* Secondary CTA */}
-        <div className="mb-12">
-          <Button variant="ghost" className="btn-secondary">
-            <Play className="w-4 h-4 mr-2" />
-            Ver Demo En Vivo
-          </Button>
+      {/* Stats Section */}
+      <section className="relative z-10 px-6 lg:px-12 py-16">
+        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          {[
+            { label: "Partidas analizadas", value: "3245", icon: Users, desc: "Hoy" },
+            { label: "Más eficiente", value: "49%", icon: TrendingUp, desc: "vs práctica tradicional" },
+            { label: "Mejora más rápida", value: "27%", icon: Zap, desc: "en GPM & KDA & XPM" },
+            { label: "Satisfacción", value: "92%", icon: BarChart3, desc: "de nuestros usuarios" }
+          ].map((stat, index) => (
+            <Card key={index} className="glass-card border-neon-green/20 glow-green hover:glow-purple transition-all duration-300">
+              <CardContent className="p-6">
+                <stat.icon className="w-8 h-8 mx-auto mb-2 text-neon-green" />
+                <div className="text-3xl font-bold text-glow mb-1">{stat.value}</div>
+                <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <div className="text-xs text-neon-cyan/70 mt-1">{stat.desc}</div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
-
-        {/* Social Proof */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <div className="glass-card p-6 text-center">
-            <div className="text-3xl font-bold text-neon-green mb-2">68%</div>
-            <div className="text-sm text-text-secondary">Mejora Promedio<br />en 30 días</div>
-          </div>
-          <div className="glass-card p-6 text-center">
-            <div className="text-3xl font-bold text-neon-cyan mb-2">2.3x</div>
-            <div className="text-sm text-text-secondary">Más Rápido<br />que Solo</div>
-          </div>
-          <div className="glass-card p-6 text-center">
-            <div className="flex items-center justify-center gap-2 mb-2">
-              <Users className="w-6 h-6 text-neon-yellow" />
-              <div className="text-2xl font-bold text-neon-yellow font-mono">
-                {userCount.toLocaleString()}
-              </div>
-            </div>
-            <div className="text-sm text-text-secondary">Jugadores LATAM<br />Mejorando</div>
-          </div>
-        </div>
+      </section>
 
         {/* Live Activity */}
-        <div className="mt-8 flex items-center justify-center gap-2 text-sm text-text-muted">
-          <div className="w-2 h-2 bg-neon-green rounded-full animate-pulse" />
-          <span>{Math.floor(userCount * 0.19)} jugadores entrenando ahora</span>
+        <div className="mb-8 flex items-center justify-center gap-2 text-sm text-text-muted">
+          <div className="flex items-center space-x-6 text-sm">
+              <div className="flex items-center space-x-2">
+                <div className="w-3 h-3 bg-neon-green rounded-full animate-pulse" />
+                <span><AnimatedCounter value={playerCount} suffix="" /> jugadores LATAM</span>
+              </div>
+              <div className="flex items-center space-x-1">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-neon-yellow text-neon-yellow" />
+                ))}
+                <span className="ml-1">4.9/5</span>
+              </div>
+            </div>
         </div>
       </div>
     </section>

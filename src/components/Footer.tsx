@@ -1,5 +1,5 @@
 import { Github, Twitter, MessageCircle, Youtube, Instagram } from 'lucide-react';
-import legendsLogo from '@/assets/legends-logo.png';
+import legendsLogo from '@/assets/logo.png';
 
 const Footer = () => {
   return (
@@ -15,8 +15,8 @@ const Footer = () => {
               <span className="font-orbitron font-bold text-xl">LEGENDS</span>
             </div>
             <p className="text-text-secondary text-sm leading-relaxed">
-              La plataforma de entrenamiento eSports con IA más avanzada de LATAM. 
-              Transformamos jugadores promedio en legends.
+              La plataforma de planes de entrenamiento personalizado con IA más avanzada de LATAM. 
+              Transformamos jugadores promedio en <strong>LEGENDAS</strong>.
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center hover:bg-neon-green/20 hover:text-neon-green transition-all">
@@ -82,54 +82,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Language & Region */}
-        <div className="border-t border-white/10 pt-8 mb-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-4">
-              <div className="text-sm text-text-secondary">Idioma:</div>
-              <div className="flex gap-2">
-                <button className="px-3 py-1 bg-neon-green/20 text-neon-green rounded text-sm">
-                  Español
-                </button>
-                <button className="px-3 py-1 bg-white/10 text-text-secondary hover:bg-white/20 rounded text-sm transition-colors">
-                  Português
-                </button>
-              </div>
-            </div>
-            
-            <div className="flex items-center gap-4 text-sm text-text-secondary">
-              <span>Servidores LATAM:</span>
-              <div className="flex gap-1">
-                <span className="w-2 h-2 bg-neon-green rounded-full"></span>
-                <span>São Paulo</span>
-              </div>
-              <div className="flex gap-1">
-                <span className="w-2 h-2 bg-neon-green rounded-full"></span>
-                <span>México</span>
-              </div>
-              <div className="flex gap-1">
-                <span className="w-2 h-2 bg-neon-green rounded-full"></span>
-                <span>Buenos Aires</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Payment Methods */}
-        <div className="border-t border-white/10 pt-8 mb-8">
-          <div className="text-center">
-            <h5 className="font-semibold mb-4 text-text-secondary">Métodos de Pago Aceptados</h5>
-            <div className="flex flex-wrap justify-center gap-4">
-              <div className="glass-card px-4 py-2 text-sm">🇧🇷 PIX</div>
-              <div className="glass-card px-4 py-2 text-sm">🇲🇽 OXXO Pay</div>
-              <div className="glass-card px-4 py-2 text-sm">💳 MercadoPago</div>
-              <div className="glass-card px-4 py-2 text-sm">💰 PayPal</div>
-              <div className="glass-card px-4 py-2 text-sm">₿ Crypto</div>
-              <div className="glass-card px-4 py-2 text-sm">💳 Visa/MC</div>
-            </div>
-          </div>
-        </div>
-
         {/* Legal Links */}
         <div className="border-t border-white/10 pt-8 mb-8">
           <div className="flex flex-wrap justify-center gap-6 text-sm text-text-secondary">
@@ -145,23 +97,12 @@ const Footer = () => {
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-sm text-text-muted">
-              © 2025 Legends. Hecho con 💚 para gamers LATAM.
+              © {new Date().getFullYear()} Legends. Hecho por Gamers 💚 para gamers LATAM.
             </div>
             
             <div className="flex items-center gap-4 text-sm text-text-secondary">
-              <span>Powered by</span>
               <div className="flex items-center gap-2">
-                <Github className="w-4 h-4" />
-                <span>Open Source</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Trust Badges */}
-        <div className="mt-8 pt-8 border-t border-white/10">
-          <div className="flex flex-wrap justify-center gap-6 items-center opacity-60">
-            <div className="flex items-center gap-2 text-xs text-text-muted">
+                <div className="flex items-center gap-2 text-xs text-text-muted">
               <div className="w-4 h-4 bg-neon-green rounded-full flex items-center justify-center">
                 <div className="w-2 h-2 bg-black rounded-full"></div>
               </div>
@@ -186,8 +127,11 @@ const Footer = () => {
               <span>99.9% Uptime</span>
             </div>
           </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+
     </footer>
   );
 };

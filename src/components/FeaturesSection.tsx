@@ -3,7 +3,7 @@ import { Brain, BarChart3, Target, Globe, Award, Users } from 'lucide-react';
 const features = [
   {
     icon: Brain,
-    title: "🧠 IA Más Inteligente Que Un Coach",
+    title: "🧠 IA Con precision quirúrjica",
     description: "Analiza +50 variables que ni los pros notan. GPM, XPM, patrones de muerte, eficiencia de farmeo, y mucho más.",
     gradient: "from-neon-purple to-neon-cyan"
   },
@@ -18,28 +18,15 @@ const features = [
     title: "🎯 Entrenamiento 100% Personalizado",
     description: "Drills específicos para TUS debilidades. Si fallas en teamfights, practicas teamfights. Simple.",
     gradient: "from-neon-green to-neon-yellow"
-  },
-  {
-    icon: Globe,
-    title: "🌎 Hecho Para LATAM, Por LATAM",
-    description: "Servidores en São Paulo, Ciudad de México y Buenos Aires. Precios justos, idioma nativo.",
-    gradient: "from-neon-yellow to-neon-green"
-  },
-  {
-    icon: Award,
-    title: "🏆 Certificaciones Con Valor Real",
-    description: "Valida tus habilidades con badges verificables. Muestra tu progreso a equipos y patrocinadores.",
-    gradient: "from-neon-green to-neon-cyan"
-  },
-  {
-    icon: Users,
-    title: "👥 Comunidad Que Te Entiende",
-    description: "15,000+ jugadores latinos mejorando juntos. Encuentra duo, equipo, o simplemente apoyo.",
-    gradient: "from-neon-cyan to-neon-purple"
   }
 ];
 
 const FeaturesSection = () => {
+
+  const openDashboard = () => {
+    window.location.href = 'https://stephanoapiolaza.github.io/legends-core/';
+  }
+
   return (
     <section className="py-20 relative">
       <div className="container mx-auto px-4">
@@ -100,42 +87,12 @@ const FeaturesSection = () => {
             <p className="text-text-secondary mb-6">
               Más de 15,000 jugadores ya están usando estas herramientas para dominar sus ranks.
             </p>
-            <button className="btn-hero">
+            <button className="btn-hero" onClick={openDashboard} >
               PROBAR LEGENDS GRATIS
             </button>
           </div>
         </div>
 
-        {/* Tech Stack Showcase */}
-        <div className="mt-20">
-          <div className="text-center mb-12">
-            <h3 className="font-orbitron font-bold text-2xl mb-4">
-              Tecnología De <span className="text-neon-cyan">Vanguardia</span>
-            </h3>
-            <p className="text-text-secondary">
-              Nuestros algoritmos procesan millones de datos cada minuto
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="glass-card p-6 text-center">
-              <div className="text-2xl font-bold text-neon-green mb-2">10M+</div>
-              <div className="text-sm text-text-secondary">Partidas Analizadas</div>
-            </div>
-            <div className="glass-card p-6 text-center">
-              <div className="text-2xl font-bold text-neon-cyan mb-2">50+</div>
-              <div className="text-sm text-text-secondary">Variables por Match</div>
-            </div>
-            <div className="glass-card p-6 text-center">
-              <div className="text-2xl font-bold text-neon-purple mb-2">24/7</div>
-              <div className="text-sm text-text-secondary">Análisis en Tiempo Real</div>
-            </div>
-            <div className="glass-card p-6 text-center">
-              <div className="text-2xl font-bold text-neon-yellow mb-2">99.9%</div>
-              <div className="text-sm text-text-secondary">Uptime Garantizado</div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

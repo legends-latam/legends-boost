@@ -2,6 +2,11 @@ import { Check, X, Crown, Shield, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const PricingSection = () => {
+
+  const openDashboard = () => {
+    window.location.href = 'https://stephanoapiolaza.github.io/legends-core/';
+  }
+
   return (
     <section className="py-20 relative">
       <div className="container mx-auto px-4">
@@ -24,16 +29,8 @@ const PricingSection = () => {
               <span className="font-bold text-neon-yellow">EARLY ACCESS: SOLO QUEDAN 127 CUPOS</span>
             </div>
             <p className="text-text-secondary">
-              30% DESCUENTO DE POR VIDA - Los primeros 500 usuarios obtienen precio bloqueado para siempre
+              30% DESCUENTO PRIMER AÑO - Los primeros 500 usuarios obtienen precio bloqueado para siempre
             </p>
-            <div className="mt-4 flex justify-center items-center gap-4">
-              <div className="text-neon-red font-mono font-bold">Termina en:</div>
-              <div className="flex gap-2 font-mono font-bold">
-                <span className="bg-neon-red/20 px-2 py-1 rounded">47</span>:
-                <span className="bg-neon-red/20 px-2 py-1 rounded">23</span>:
-                <span className="bg-neon-red/20 px-2 py-1 rounded">15</span>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -46,7 +43,7 @@ const PricingSection = () => {
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-white/10 flex items-center justify-center">
                 <Shield className="w-8 h-8 text-white" />
               </div>
-              <h3 className="font-orbitron font-bold text-2xl mb-2">FREE</h3>
+              <h3 className="font-orbitron font-bold text-2xl mb-2">Gratuito</h3>
               <div className="text-4xl font-bold mb-2">$0</div>
               <div className="text-text-secondary">Para probar</div>
             </div>
@@ -78,16 +75,16 @@ const PricingSection = () => {
               </div>
             </div>
 
-            <Button variant="outline" className="w-full btn-secondary">
+            <Button variant="outline" className="w-full btn-secondary" onClick={openDashboard}>
               Empezar Gratis
             </Button>
           </div>
 
           {/* PRO Plan - Featured */}
-          <div className="relative glass-card p-8 border-neon-green/50 hover:border-neon-green transition-all duration-300 scale-105">
+          <div className="relative glass-card p-8 border-neon-green/50 hover:border-neon-green transition-all duration-300 scale-105" style={{overflow: 'unset'}}>
             {/* Popular Badge */}
             <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-              <div className="bg-gradient-to-r from-neon-green to-neon-cyan px-6 py-2 rounded-full text-black font-bold text-sm">
+              <div className="bg-gradient-to-r from-neon-green to-neon-cyan px-2 py-2 rounded-full text-black font-bold text-sm">
                 MÁS POPULAR
               </div>
             </div>
@@ -104,7 +101,7 @@ const PricingSection = () => {
                 <span className="text-4xl font-bold text-neon-green">$9</span>
                 <span className="text-text-secondary">USD/mes</span>
               </div>
-              <div className="text-neon-yellow font-semibold">30% OFF LIFETIME</div>
+              <div className="text-neon-yellow font-semibold">30% Descuento/Primer Año</div>
             </div>
 
             <div className="space-y-4 mb-8">
@@ -142,7 +139,7 @@ const PricingSection = () => {
               </div>
             </div>
 
-            <Button className="w-full btn-hero pulse-glow">
+            <Button className="w-full btn-hero pulse-glow" onClick={openDashboard}>
               OBTENER PRO AHORA
             </Button>
             
@@ -182,7 +179,7 @@ const PricingSection = () => {
               </div>
             </div>
 
-            <Button variant="outline" className="w-full border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-black">
+            <Button variant="outline" disabled className="w-full border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-black">
               Me Interesa
             </Button>
           </div>
@@ -217,15 +214,15 @@ const PricingSection = () => {
                 <div className="text-sm text-text-secondary">PIX, Boleto, MercadoPago</div>
               </div>
               <div className="glass-card p-4">
-                <div className="text-lg font-bold text-neon-cyan mb-1">🇲🇽 México</div>
-                <div className="text-sm text-text-secondary">OXXO Pay, Tarjetas</div>
+                <div className="text-lg font-bold text-neon-purple mb-1">🇨🇱 Chile</div>
+                <div className="text-sm text-text-secondary">Mercadopago, Webpay</div>
               </div>
               <div className="glass-card p-4">
-                <div className="text-lg font-bold text-neon-purple mb-1">🌎 Regional</div>
-                <div className="text-sm text-text-secondary">PayPal, Crypto</div>
+                <div className="text-lg font-bold text-neon-yellow mb-1">🇵🇪 Perú</div>
+                <div className="text-sm text-text-secondary">Yape, Plin</div>
               </div>
-              <div className="glass-card p-4">
-                <div className="text-lg font-bold text-neon-yellow mb-1">💳 Global</div>
+               <div className="glass-card p-4">
+                <div className="text-lg font-bold text-neon-cyan mb-1">🌎 Global</div>
                 <div className="text-sm text-text-secondary">Visa, Mastercard</div>
               </div>
             </div>
