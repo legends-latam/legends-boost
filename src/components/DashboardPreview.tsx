@@ -41,17 +41,17 @@ const DashboardPreview = () => {
         <div className="max-w-6xl mx-auto">
           <Tabs defaultValue="overview" className="space-y-8">
             {/* Tab Navigation */}
-            <TabsList className="grid w-full grid-cols-4 bg-bg-tertiary/50 backdrop-blur-md">
+            <TabsList className="grid gap-2 grid-cols-2 lg:grid-cols-4 bg-bg-tertiary/50 backdrop-blur-md">
               <TabsTrigger value="overview" className="data-[state=active]:bg-neon-green data-[state=active]:text-black">
                 Visión General
               </TabsTrigger>
               <TabsTrigger value="analysis" className="data-[state=active]:bg-neon-cyan data-[state=active]:text-black">
                 Análisis Detallado
               </TabsTrigger>
-              <TabsTrigger value="improvement" className="data-[state=active]:bg-neon-purple data-[state=active]:text-black">
+              <TabsTrigger value="improvement" className="data-[state=active]:bg-neon-purple data-[state=active]:text-black bg-bg-tertiary/50">
                 Plan de Mejora
               </TabsTrigger>
-              <TabsTrigger value="progress" className="data-[state=active]:bg-neon-yellow data-[state=active]:text-black">
+              <TabsTrigger value="progress" className="data-[state=active]:bg-neon-yellow data-[state=active]:text-black bg-bg-tertiary/50">
                 Progreso
               </TabsTrigger>
             </TabsList>
@@ -60,7 +60,7 @@ const DashboardPreview = () => {
             <TabsContent value="overview" className="space-y-8">
               <div className="grid lg:grid-cols-2 gap-8">
                 {/* Skills Hexagon */}
-                <div className="glass-card p-8">
+                <div className="glass-card p-8 lg:mt-0 mt-8">
                   <h3 className="font-orbitron font-bold text-xl mb-6 text-center">
                     Análisis de Habilidades
                   </h3>
@@ -194,7 +194,7 @@ const DashboardPreview = () => {
 
             {/* Analysis Tab */}
             <TabsContent value="analysis">
-              <div className="glass-card p-8">
+              <div className="glass-card p-8 lg:mt-0 mt-14">
                 <div className="grid lg:grid-cols-2 gap-8 items-center">
                   <div>
                     <h3 className="font-orbitron font-bold text-2xl mb-6">
@@ -234,8 +234,8 @@ const DashboardPreview = () => {
             </TabsContent>
 
             {/* Improvement Tab */}
-            <TabsContent value="improvement">
-              <div className="glass-card p-8 text-center">
+            <TabsContent value="improvement" className='mt-8'>
+              <div className="glass-card p-8 text-center lg:mt-0 mt-14">
                 <h3 className="font-orbitron font-bold text-2xl mb-4">Plan de Mejora Personalizado</h3>
                 <p className="text-text-secondary mb-8">
                   Basado en tu análisis, aquí están las áreas prioritarias para mejorar tu gameplay.
@@ -263,7 +263,7 @@ const DashboardPreview = () => {
 
             {/* Progress Tab */}
             <TabsContent value="progress">
-              <div className="glass-card p-8 text-center">
+              <div className="glass-card p-8 text-center lg:mt-0 mt-14">
                 <h3 className="font-orbitron font-bold text-2xl mb-4">Tu Progreso en Legends</h3>
                 <p className="text-text-secondary mb-8">
                   Métricas de mejora desde que comenzaste a usar Legends.
