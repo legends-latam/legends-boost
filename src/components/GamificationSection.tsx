@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 
 const GamificationSection = () => {
   return (
-    <section className="relative py-24 px-4 overflow-hidden bg-gradient-to-b from-bg-primary via-bg-tertiary to-bg-primary">
+    <section className="relative py-24 px-0 overflow-hidden bg-gradient-to-b from-bg-primary via-bg-tertiary to-bg-primary">
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 -left-48 w-96 h-96 bg-neon-yellow/10 rounded-full blur-3xl animate-pulse"></div>

@@ -174,10 +174,10 @@ const HeroSection = () => {
       <section className="relative z-10 px-6 lg:px-12 py-16">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { label: "Partidas analizadas", value: "3245", icon: Users, desc: "Hoy" },
+            { label: "Mayor visibilidad", value: "15%", icon: Users, desc: "para formar equipos" },
             { label: "Más eficiente", value: "49%", icon: TrendingUp, desc: "vs práctica tradicional" },
             { label: "Mejora más rápida", value: "27%", icon: Zap, desc: "en GPM & KDA & XPM" },
-            { label: "Satisfacción", value: "92%", icon: BarChart3, desc: "de nuestros usuarios" }
+            { label: "Satisfacción", value: "92%", icon: BarChart3, desc: "por jugadores entrevistados" }
           ].map((stat, index) => (
             <Card key={index} className="glass-card border-neon-green/20 glow-green hover:glow-purple transition-all duration-300">
               <CardContent className="p-6">

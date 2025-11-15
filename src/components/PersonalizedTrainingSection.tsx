@@ -6,7 +6,7 @@ import heroVideoMp4 from "@/assets/hero.mp4";
 
 const PersonalizedTrainingSection = () => {
   return (
-    <section className="relative py-24 px-4 overflow-hidden bg-gradient-to-b from-bg-primary via-bg-secondary to-bg-primary">
+    <section className="relative py-24 px-0 overflow-hidden bg-gradient-to-b from-bg-primary via-bg-secondary to-bg-primary">
       {/* Background Effects */}
       <div className="absolute inset-0 hex-grid opacity-20"></div>
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-neon-purple/10 rounded-full blur-3xl animate-pulse"></div>

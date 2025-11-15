@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 
 const SocialNetworkSection = () => {
   return (
-    <section className="relative py-18 px-4 overflow-hidden bg-gradient-to-b from-bg-primary via-bg-tertiary to-bg-primary">
+    <section className="relative py-18 px-0 overflow-hidden bg-gradient-to-b from-bg-primary via-bg-tertiary to-bg-primary">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 -right-48 w-96 h-96 bg-neon-purple/10 rounded-full blur-3xl animate-pulse"></div>
@@ -31,7 +31,7 @@ const SocialNetworkSection = () => {
         </div>
 
         {/* Main Profile Showcase */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
 
           {/* Left: AI Features */}
           <div className="space-y-6">
@@ -176,7 +176,7 @@ const SocialNetworkSection = () => {
                 </div>
 
                 {/* Stats Grid */}
-                <div className="grid grid-cols-4 gap-4 mb-6">
+                <div className="grid grid-cols-3 lg:grid-cols-4 gap-4 mb-6">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-white">2,847</div>
                     <div className="text-xs text-gray-400">Partidas Totales</div>
