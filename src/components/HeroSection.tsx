@@ -1,18 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from '@/components/ui/input';
-import { Play, Shield, Users, TrendingUp, Star,
-  Trophy, 
-  Zap,  
-  BarChart3, 
-  GamepadIcon,
-  CheckCircle,
-  Twitter,
-  MessageCircle,
-  Youtube,
-  Twitch
- } from 'lucide-react';
+import { Card, CardContent } from "@/components/ui/card";
+import heroVideoMp4 from '@/assets/hero.mp4';
+import heroVideoWebm from '@/assets/hero.webm';
+import {
+  Shield, Users, TrendingUp,
+  Zap,
+  BarChart3, Download,
+} from 'lucide-react';
 import heroBackground from '@/assets/hero-bg.jpg';
 import legendsLogo from '@/assets/logo.png';
 
@@ -121,13 +116,58 @@ const HeroSection = () => {
 
         {/* Secondary CTA */}
         <div className="mb-12">
-          <Button className="btn-hero pulse-glow whitespace-nowrap">
-              Analiza mi nivel Gratis
+          <Button className="btn-hero pulse-glow whitespace-nowrap" onClick={openDashboard}>
+            <Download className="w-4 h-4" />
+              Descargar para Windows
             </Button>
           <p className="text-sm text-text-muted mt-2 flex items-center justify-center gap-2">
             <Shield className="w-4 h-4" />
-            Te autenticas directamente en Steam
+            Descarga la app según tu sistema operativo
           </p>
+        </div>
+
+        {/* App Preview with Monitor Frame */}
+        <div className="mb-16 mt-12">
+          <div className="relative max-w-6xl mx-auto">
+            {/* Monitor Frame */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-gray-800 bg-gray-900">
+              {/* Monitor Top Bar */}
+              <div className="bg-gradient-to-b from-gray-700 to-gray-800 px-4 py-2 flex items-center justify-between border-b-2 border-gray-900">
+                <div className="flex gap-2">
+                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                </div>
+                <div className="text-xs text-gray-400 font-mono">Legends OS - Tu Coach AI Personal</div>
+                <div className="w-16"></div>
+              </div>
+
+              {/* Screen Content */}
+              <div className="relative bg-black aspect-video overflow-hidden">
+                {/* App Demo Video */}
+                <video
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source src={heroVideoWebm} type="video/webm" />
+                  <source src={heroVideoMp4} type="video/mp4" />
+                  {/* Fallback for browsers that don't support video */}
+                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+                    <div className="text-center">
+                      <h3 className="text-2xl font-bold text-white mb-2">Legends OS</h3>
+                      <p className="text-gray-400">Tu navegador no soporta reproducción de video</p>
+                    </div>
+                  </div>
+                </video>
+              </div>
+            </div>
+
+            {/* Glow Effects */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-neon-green/20 via-neon-purple/20 to-neon-cyan/20 rounded-3xl blur-3xl -z-10 animate-pulse"></div>
+          </div>
         </div>
 
       {/* Stats Section */}
@@ -151,21 +191,6 @@ const HeroSection = () => {
         </div>
       </section>
 
-        {/* Live Activity */}
-        <div className="mb-8 flex items-center justify-center gap-2 text-sm text-text-muted">
-          <div className="flex items-center space-x-6 text-sm">
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-neon-green rounded-full animate-pulse" />
-                <span><AnimatedCounter value={playerCount} suffix="" /> jugadores LATAM</span>
-              </div>
-              <div className="flex items-center space-x-1">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-neon-yellow text-neon-yellow" />
-                ))}
-                <span className="ml-1">4.9/5</span>
-              </div>
-            </div>
-        </div>
       </div>
     </section>
   );

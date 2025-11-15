@@ -1,4 +1,4 @@
-import { Check, X, Crown, Shield, Zap } from 'lucide-react';
+import { Check, X, Crown, Shield, Zap, Wallet } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const PricingSection = () => {
@@ -26,10 +26,10 @@ const PricingSection = () => {
           <div className="glass-card p-6 border-neon-yellow/50 text-center">
             <div className="flex items-center justify-center gap-2 mb-2">
               <Zap className="w-5 h-5 text-neon-yellow" />
-              <span className="font-bold text-neon-yellow">EARLY ACCESS: SOLO QUEDAN 127 CUPOS</span>
+              <span className="font-bold text-neon-yellow">EARLY ACCESS: TIEMPO LIMITADO</span>
             </div>
             <p className="text-text-secondary">
-              30% DESCUENTO PRIMER AÑO - Los primeros 500 usuarios obtienen precio bloqueado para siempre
+              KIT LEGENDAS - Los primeros 500 usuarios que se registren tendrán un kit de bienvenida en Legends Coins
             </p>
           </div>
         </div>
@@ -43,7 +43,7 @@ const PricingSection = () => {
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-white/10 flex items-center justify-center">
                 <Shield className="w-8 h-8 text-white" />
               </div>
-              <h3 className="font-orbitron font-bold text-2xl mb-2">Gratuito</h3>
+              <h3 className="font-orbitron font-bold text-2xl mb-2">FREEMIUM</h3>
               <div className="text-4xl font-bold mb-2">$0</div>
               <div className="text-text-secondary">Para probar</div>
             </div>
@@ -51,19 +51,23 @@ const PricingSection = () => {
             <div className="space-y-4 mb-8">
               <div className="flex items-center gap-3">
                 <Check className="w-5 h-5 text-neon-green flex-shrink-0" />
-                <span className="text-sm">3 análisis por semana</span>
+                <span className="text-sm">Análisis básico con IA</span>
               </div>
               <div className="flex items-center gap-3">
                 <Check className="w-5 h-5 text-neon-green flex-shrink-0" />
-                <span className="text-sm">Dashboard básico</span>
+                <span className="text-sm">7 conexiones con jugadores</span>
               </div>
               <div className="flex items-center gap-3">
                 <Check className="w-5 h-5 text-neon-green flex-shrink-0" />
-                <span className="text-sm">1 drill semanal</span>
+                <span className="text-sm">Entrenar rol primario y secundario</span>
               </div>
               <div className="flex items-center gap-3">
                 <Check className="w-5 h-5 text-neon-green flex-shrink-0" />
-                <span className="text-sm">Comunidad general</span>
+                <span className="text-sm">Multijuegos</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Check className="w-5 h-5 text-neon-green flex-shrink-0" />
+                <span className="text-sm">Plan personalizado individual</span>
               </div>
               <div className="flex items-center gap-3">
                 <X className="w-5 h-5 text-text-muted flex-shrink-0" />
@@ -71,7 +75,7 @@ const PricingSection = () => {
               </div>
               <div className="flex items-center gap-3">
                 <X className="w-5 h-5 text-text-muted flex-shrink-0" />
-                <span className="text-sm text-text-muted">Sin plan personalizado</span>
+                <span className="text-sm text-text-muted">Bloquear Publicidad</span>
               </div>
             </div>
 
@@ -85,7 +89,7 @@ const PricingSection = () => {
             {/* Popular Badge */}
             <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
               <div className="bg-gradient-to-r from-neon-green to-neon-cyan px-2 py-2 rounded-full text-black font-bold text-sm">
-                MÁS POPULAR
+                LEGENDARY
               </div>
             </div>
 
@@ -95,31 +99,24 @@ const PricingSection = () => {
                   <Zap className="w-8 h-8 text-neon-green" />
                 </div>
               </div>
-              <h3 className="font-orbitron font-bold text-2xl mb-2 text-neon-green">PRO</h3>
+              <h3 className="font-orbitron font-bold text-2xl mb-2 text-neon-green">PREMIUM</h3>
               <div className="flex items-center justify-center gap-2 mb-2">
                 <span className="text-2xl text-text-muted line-through">$13</span>
-                <span className="text-4xl font-bold text-neon-green">$9</span>
+                <span className="text-4xl font-bold text-neon-green">$10</span>
                 <span className="text-text-secondary">USD/mes</span>
               </div>
               <div className="text-neon-yellow font-semibold">30% Descuento/Primer Año</div>
             </div>
 
             <div className="space-y-4 mb-8">
+              <div className="text-sm text-neon-green font-semibold mb-4">Todo lo FREEMIUM más:</div>
               <div className="flex items-center gap-3">
                 <Check className="w-5 h-5 text-neon-green flex-shrink-0" />
-                <span className="text-sm">Análisis ILIMITADO con IA</span>
+                <span className="text-sm">Análisis avanzado con IA++</span>
               </div>
               <div className="flex items-center gap-3">
                 <Check className="w-5 h-5 text-neon-green flex-shrink-0" />
-                <span className="text-sm">Dashboard completo personalizable</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Check className="w-5 h-5 text-neon-green flex-shrink-0" />
-                <span className="text-sm">Drills ilimitados personalizados</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Check className="w-5 h-5 text-neon-green flex-shrink-0" />
-                <span className="text-sm">Planes de entrenamiento adaptativos</span>
+                <span className="text-sm">Ilimitadas conexiones con jugadores</span>
               </div>
               <div className="flex items-center gap-3">
                 <Check className="w-5 h-5 text-neon-green flex-shrink-0" />
@@ -127,7 +124,7 @@ const PricingSection = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Check className="w-5 h-5 text-neon-green flex-shrink-0" />
-                <span className="text-sm">Comunidad PRO exclusiva</span>
+                <span className="text-sm">+10% acumulación de Legends Coins</span>
               </div>
               <div className="flex items-center gap-3">
                 <Check className="w-5 h-5 text-neon-green flex-shrink-0" />
@@ -156,11 +153,11 @@ const PricingSection = () => {
               </div>
               <h3 className="font-orbitron font-bold text-2xl mb-2 text-neon-purple">ELITE</h3>
               <div className="text-2xl font-bold mb-2">Próximamente</div>
-              <div className="text-text-secondary">2026</div>
+              <div className="text-text-secondary">2026/Q3</div>
             </div>
 
             <div className="space-y-4 mb-8">
-              <div className="text-sm text-neon-purple font-semibold mb-4">Todo lo PRO más:</div>
+              <div className="text-sm text-neon-purple font-semibold mb-4">Todo lo PREMIUM más:</div>
               <div className="flex items-center gap-3">
                 <Crown className="w-5 h-5 text-neon-purple flex-shrink-0" />
                 <span className="text-sm">Coaching 1-on-1 profesional</span>
@@ -171,11 +168,15 @@ const PricingSection = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Crown className="w-5 h-5 text-neon-purple flex-shrink-0" />
-                <span className="text-sm">Preparación para torneos específicos</span>
+                <span className="text-sm">Plan personalizado de equipo</span>
               </div>
               <div className="flex items-center gap-3">
                 <Crown className="w-5 h-5 text-neon-purple flex-shrink-0" />
                 <span className="text-sm">Badge exclusivo Elite</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Crown className="w-5 h-5 text-neon-purple flex-shrink-0" />
+                <span className="text-sm">+15% acumulación de Legends Coins</span>
               </div>
             </div>
 
@@ -197,8 +198,8 @@ const PricingSection = () => {
               <span className="text-sm text-text-secondary">30 días garantía devolución</span>
             </div>
             <div className="flex items-center justify-center gap-2">
-              <Users className="w-5 h-5 text-neon-yellow" />
-              <span className="text-sm text-text-secondary">Usado por 15,247 jugadores</span>
+              <Wallet className="w-5 h-5 text-neon-yellow" />
+              <span className="text-sm text-text-secondary">USD se convierten a Legends Coins</span>
             </div>
           </div>
         </div>
@@ -236,14 +237,5 @@ const PricingSection = () => {
     </section>
   );
 };
-
-const Users = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-    <circle cx="9" cy="7" r="4" />
-    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-  </svg>
-);
 
 export default PricingSection;

@@ -2,6 +2,10 @@ import { useState, useEffect } from 'react';
 import HeroSection from '@/components/HeroSection';
 import ProblemSolutionSection from '@/components/ProblemSolutionSection';
 import FeaturesSection from '@/components/FeaturesSection';
+import PersonalizedTrainingSection from '@/components/PersonalizedTrainingSection';
+import PracticeModesSection from '@/components/PracticeModesSection';
+import GamificationSection from '@/components/GamificationSection';
+import SocialNetworkSection from '@/components/SocialNetworkSection.tsx';
 import DashboardPreview from '@/components/DashboardPreview';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import PricingSection from '@/components/PricingSection';
@@ -26,20 +30,17 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Scroll Progress Indicator */}
-      <div 
+      <div
         className="scroll-indicator"
         style={{ width: `${scrollProgress}%` }}
       />
 
       {/* Landing Page Sections */}
       <HeroSection />
-      <ProblemSolutionSection />
-      <FeaturesSection />
-      <DashboardPreview />
-      <TestimonialsSection />
+      <PersonalizedTrainingSection />
+      <SocialNetworkSection />
+      <GamificationSection />
       <PricingSection />
-      <FaqSection />
-      <CtaSection />
       <Footer />
     </div>
   );
