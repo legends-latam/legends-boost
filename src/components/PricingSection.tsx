@@ -137,7 +137,7 @@ const PricingSection = () => {
             </div>
 
             <Button className="w-full btn-hero pulse-glow" onClick={openDashboard}>
-              OBTENER PRO AHORA
+              OBTENER PREMIUM AHORA
             </Button>
             
             <p className="text-xs text-neon-cyan text-center mt-2">

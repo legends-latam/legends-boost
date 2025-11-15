@@ -1,8 +1,8 @@
 import { Target, Crosshair, BookOpen, Play, CheckCircle, Sparkles } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import heroVideoWebm from "@/assets/hero.webm";
-import heroVideoMp4 from "@/assets/hero.mp4";
+import heroVideoWebm from "@/assets/training-path.webm";
+import heroVideoMp4 from "@/assets/training-path.mp4";
 
 const PersonalizedTrainingSection = () => {
   return (
@@ -34,28 +34,49 @@ const PersonalizedTrainingSection = () => {
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
           {/* Left: Visual Preview */}
           <div className="relative group">
-            <div className="relative rounded-2xl overflow-hidden border-2 border-neon-green/30 bg-gradient-to-br from-gray-900 to-black shadow-2xl hover:border-neon-green transition-all duration-500">
+            <div className="relative rounded-2xl overflow-hidden hover:border-neon-green transition-all duration-500">
               {/* Simulated Training Path Interface */}
-              <div className="p-8">
-                <div className="relative bg-black aspect-video overflow-hidden">
-                  {/* App Demo Video */}
-                  <video
-                      className="w-full h-full object-cover"
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                  >
-                    <source src={heroVideoWebm} type="video/webm" />
-                    <source src={heroVideoMp4} type="video/mp4" />
-                    {/* Fallback for browsers that don't support video */}
-                    <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-black">
-                      <div className="text-center">
-                        <h3 className="text-2xl font-bold text-white mb-2">Legends OS</h3>
-                        <p className="text-gray-400">Tu navegador no soporta reproducción de video</p>
+              {/* App Preview with Monitor Frame */}
+              <div className="">
+                <div className="relative max-w-6xl mx-auto">
+                  {/* Monitor Frame */}
+                  <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-gray-800 bg-gray-900">
+                    {/* Monitor Top Bar */}
+                    <div className="bg-gradient-to-b from-gray-700 to-gray-800 px-4 py-2 flex items-center justify-between border-b-2 border-gray-900">
+                      <div className="flex gap-2">
+                        <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div className="w-3 h-3 rounded-full bg-green-500"></div>
                       </div>
+                      <div className="text-xs text-gray-400 font-mono">Legends OS - Tu Coach AI Personal</div>
+                      <div className="w-16"></div>
                     </div>
-                  </video>
+
+                    {/* Screen Content */}
+                    <div className="relative bg-black aspect-video overflow-hidden">
+                      {/* App Demo Video */}
+                      <video
+                          className="w-full h-full object-fill"
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                      >
+                        <source src={heroVideoWebm} type="video/webm" />
+                        <source src={heroVideoMp4} type="video/mp4" />
+                        {/* Fallback for browsers that don't support video */}
+                        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+                          <div className="text-center">
+                            <h3 className="text-2xl font-bold text-white mb-2">Legends OS</h3>
+                            <p className="text-gray-400">Tu navegador no soporta reproducción de video</p>
+                          </div>
+                        </div>
+                      </video>
+                    </div>
+                  </div>
+
+                  {/* Glow Effects */}
+                  <div className="absolute -inset-4 bg-gradient-to-r from-neon-green/20 via-neon-purple/20 to-neon-cyan/20 rounded-3xl blur-3xl -z-10 animate-pulse"></div>
                 </div>
               </div>
             </div>

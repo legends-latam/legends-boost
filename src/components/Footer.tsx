@@ -28,7 +28,7 @@ const Footer = () => {
               </a>
               <a href="#"
                  className="w-8 h-8 flex items-center justify-center hover:text-neon-cyan transition-all">
-                <img src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/65a4fe4237b6a1c4fa714f76_x.svg" loading="lazy" alt="Twitter" class="image" />
+                <img src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/65a4fe4237b6a1c4fa714f76_x.svg" loading="lazy" alt="Twitter" className="image" />
               </a>
               <a href="#" className="w-8 h-8  flex items-center justify-center hover:text-neon-red transition-all">
                 <Youtube className="w-8 h-8" />
@@ -44,7 +44,6 @@ const Footer = () => {
             <h4 className="font-orbitron font-bold mb-4 text-neon-green">Producto</h4>
             <ul className="space-y-3 text-sm">
               <li><a href="#dashboard" className="text-text-secondary hover:text-white transition-colors">Descarga</a></li>
-              <li><a href="#roadmap" className="text-text-secondary hover:text-white transition-colors">Roadmap</a></li>
               <li><a href="#api" className="text-text-secondary hover:text-white transition-colors">Legends SDK</a></li>
               <li><a href="#changelog" className="text-text-secondary hover:text-white transition-colors">Changelog</a></li>
             </ul>

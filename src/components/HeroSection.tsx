@@ -10,6 +10,10 @@ import {
 } from 'lucide-react';
 import heroBackground from '@/assets/hero-bg.jpg';
 import legendsLogo from '@/assets/logo.png';
+import dota from '@/assets/dota.svg';
+import lol from '@/assets/lol.webp';
+import valorant from '@/assets/valorant.webp';
+import cs2 from '@/assets/cs2.webp';
 
 const HeroSection = () => {
   const [userCount, setUserCount] = useState(15247);
@@ -96,19 +100,19 @@ const HeroSection = () => {
         {/* Game Selector */}
         <div className="flex flex-wrap justify-center gap-4 mb-8">
           <div className="flex items-center gap-2 px-4 py-2 glass-card">
-            <Shield className="w-5 h-5 text-neon-green" />
+            <img src={dota} alt="Dota 2" className="w-auto" />
             <span className="text-white font-semibold">Dota 2 ✅</span>
           </div>
           <div className="flex items-center gap-2 px-4 py-2 glass-card opacity-50">
-            <Shield className="w-5 h-5 text-text-muted" />
+            <img src={lol} alt="League of Legends" className="w-auto" />
             <span className="text-text-muted">LoL 🔒</span>
           </div>
           <div className="flex items-center gap-2 px-4 py-2 glass-card opacity-50">
-            <Shield className="w-5 h-5 text-text-muted" />
+            <img src={valorant} alt="Valorant" className="w-auto" />
             <span className="text-text-muted">Valorant 🔒</span>
           </div>
           <div className="flex items-center gap-2 px-4 py-2 glass-card opacity-50">
-            <Shield className="w-5 h-5 text-text-muted" />
+            <img src={cs2} alt="Counter Strike 2" className="w-auto" />
             <span className="text-text-muted">CS2 🔒</span>
           </div>
         </div>
@@ -146,7 +150,7 @@ const HeroSection = () => {
               <div className="relative bg-black aspect-video overflow-hidden">
                 {/* App Demo Video */}
                 <video
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-fill"
                   autoPlay
                   loop
                   muted
