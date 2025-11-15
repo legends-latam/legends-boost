@@ -229,7 +229,7 @@ const PricingSection = () => {
               </div>
                <div className="glass-card p-4">
                 <div className="text-lg font-bold text-neon-cyan mb-1">🌎 Global</div>
-                <div className="text-sm text-text-secondary">Visa, Mastercard</div>
+                <div className="text-sm text-text-secondary">Visa, Mastercard, Amex, Paypal</div>
               </div>
             </div>
             

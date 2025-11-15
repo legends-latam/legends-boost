@@ -100,7 +100,7 @@ const SocialNetworkSection = () => {
                   <div>
                     <h3 className="text-xl font-bold text-white mb-2">Participa en torneos</h3>
                     <p className="text-text-secondary">
-                      Noticias de torneos activos, análisis de debilidades de equipos participantes y pública tus trofeos obtenidos.
+                      Noticias de torneos activos, análisis de debilidades de equipos participantes y publica tus trofeos obtenidos.
                     </p>
                   </div>
                 </div>
