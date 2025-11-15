@@ -149,14 +149,24 @@ const SocialNetworkSection = () => {
                     </div>
                   </div>
 
-                  <div className="flex flex-col gap-2 mt-12">
-                    <Button size="sm" variant="default" className="btn-hero pulse-glow whitespace-nowrap">
+                  <div className="hidden sm:flex flex-col gap-2 mt-12">
+                    <Button size="sm" variant="default" className="btn-hero pulse-glow whitespace-nowrap text-xs sm:text-sm px-3 py-2">
                       Conectar
                     </Button>
-                    <Button size="sm" variant="ghost" className="border-gray-600 text-black-300">
+                    <Button size="sm" variant="ghost" className="border border-gray-600 text-gray-300 hover:text-white hover:bg-gray-800 text-xs sm:text-sm px-3 py-2">
                       Ver Análisis
                     </Button>
                   </div>
+                </div>
+
+                {/* Mobile Buttons */}
+                <div className="flex sm:hidden gap-2 mb-4">
+                  <Button size="sm" variant="default" className="btn-hero pulse-glow flex-1 text-sm px-4 py-2">
+                    Conectar
+                  </Button>
+                  <Button size="sm" variant="ghost" className="border border-gray-600 text-gray-300 hover:text-white hover:bg-gray-800 flex-1 text-sm px-4 py-2">
+                    Ver Análisis
+                  </Button>
                 </div>
 
                 {/* Role Badges */}
