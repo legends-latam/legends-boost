@@ -1,11 +1,8 @@
-import { Check, X, Crown, Shield, Zap, Wallet } from 'lucide-react';
+import {Check, X, Crown, Shield, Zap, Wallet, Download} from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import BetaSignupModal from "@/components/BetaSignupModal.tsx";
 
 const PricingSection = () => {
-
-  const openDashboard = () => {
-    window.location.href = 'https://stephanoapiolaza.github.io/legends-core/';
-  }
 
   return (
     <section className="py-20 relative">
@@ -79,9 +76,13 @@ const PricingSection = () => {
               </div>
             </div>
 
-            <Button variant="outline" className="w-full btn-secondary" onClick={openDashboard}>
-              Empezar Gratis
-            </Button>
+            <BetaSignupModal
+                trigger={
+                  <Button variant="outline" className="w-full btn-secondary">
+                    Empezar Gratis
+                  </Button>
+                }
+            />
           </div>
 
           {/* PRO Plan - Featured */}
@@ -136,9 +137,13 @@ const PricingSection = () => {
               </div>
             </div>
 
-            <Button className="w-full btn-hero pulse-glow" onClick={openDashboard}>
-              OBTENER PREMIUM AHORA
-            </Button>
+            <BetaSignupModal
+                trigger={
+                  <Button className="w-full btn-hero pulse-glow">
+                    OBTENER PREMIUM AHORA
+                  </Button>
+                }
+            />
             
             <p className="text-xs text-neon-cyan text-center mt-2">
               ⚡ Oferta limitada: Solo primeros 500 usuarios

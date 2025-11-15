@@ -38,7 +38,7 @@ const FaqSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-20 relative">
+    <section className="py-2 relative">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">

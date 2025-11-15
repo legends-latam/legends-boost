@@ -14,6 +14,7 @@ import dota from '@/assets/dota.svg';
 import lol from '@/assets/lol.webp';
 import valorant from '@/assets/valorant.webp';
 import cs2 from '@/assets/cs2.webp';
+import BetaSignupModal from "@/components/BetaSignupModal.tsx";
 
 const HeroSection = () => {
   const [userCount, setUserCount] = useState(15247);
@@ -40,10 +41,6 @@ const HeroSection = () => {
       {value.toLocaleString()}{suffix}
     </span>
   );
-
-  const openDashboard = () => {
-    window.location.href = 'https://stephanoapiolaza.github.io/legends-core/';
-  }
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -120,12 +117,15 @@ const HeroSection = () => {
 
         {/* Secondary CTA */}
         <div className="mb-12">
-          <Button className="btn-hero pulse-glow whitespace-nowrap" onClick={openDashboard}>
-            <Download className="w-4 h-4" />
-              Descargar para Windows
-            </Button>
+          <BetaSignupModal
+              trigger={
+                <Button className="btn-hero pulse-glow whitespace-nowrap">
+                  <Download className="w-4 h-4" />
+                  Descargar para Windows
+                </Button>
+              }
+          />
           <p className="text-sm text-text-muted mt-2 flex items-center justify-center gap-2">
-            <Shield className="w-4 h-4" />
             Descarga la app según tu sistema operativo
           </p>
         </div>

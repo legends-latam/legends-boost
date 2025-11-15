@@ -2,6 +2,11 @@ import { Github, Twitter, MessageCircle, Youtube, Instagram } from 'lucide-react
 import legendsLogo from '@/assets/logo.png';
 import etmDay from '@/assets/etmday.svg';
 import hubUnab from '@/assets/hub-unab.png';
+import TermsModal from "@/components/TermsModal.tsx";
+import PrivacyModal from "@/components/PrivacyModal.tsx";
+import BetaSignupModal from "@/components/BetaSignupModal.tsx";
+import {Button} from "@/components/ui/button.tsx";
+import FaqModal from "@/components/FaqModal.tsx";
 
 const Footer = () => {
   return (
@@ -43,9 +48,27 @@ const Footer = () => {
           <div>
             <h4 className="font-orbitron font-bold mb-4 text-neon-green">Producto</h4>
             <ul className="space-y-3 text-sm">
-              <li><a href="#dashboard" className="text-text-secondary hover:text-white transition-colors">Descarga</a></li>
-              <li><a href="#api" className="text-text-secondary hover:text-white transition-colors">Legends SDK</a></li>
-              <li><a href="#changelog" className="text-text-secondary hover:text-white transition-colors">Changelog</a></li>
+              <li>
+              <BetaSignupModal
+                  trigger={
+                    <a href="javascript:void(0)" className="text-text-secondary hover:text-white transition-colors">Descarga</a>
+                  }
+              />
+              </li>
+              <li>
+                <BetaSignupModal
+                    trigger={
+                      <a href="javascript:void(0)" className="text-text-secondary hover:text-white transition-colors">Legends SDK</a>
+                    }
+                />
+              </li>
+              <li>
+                <BetaSignupModal
+                    trigger={
+                      <a href="javascript:void(0)" className="text-text-secondary hover:text-white transition-colors">Changelog</a>
+                    }
+                />
+              </li>
             </ul>
           </div>
 
@@ -53,7 +76,12 @@ const Footer = () => {
           <div>
             <h4 className="font-orbitron font-bold mb-4 text-neon-cyan">Compañía</h4>
             <ul className="space-y-3 text-sm">
-              <li><a href="#about" className="text-text-secondary hover:text-white transition-colors">Nuestro Team</a></li>
+              <li>
+                <BetaSignupModal
+                    trigger={
+                      <a href="javascript:void(0)" className="text-text-secondary hover:text-white transition-colors">Nuestro Team</a>                    }
+                />
+              </li>
               <li><a href="https://api.whatsapp.com/send?phone=+56933251730" className="text-text-secondary hover:text-white transition-colors" target="_blank">Trabaja con nosotros</a></li>
               <li><a href="https://drive.google.com/uc?export=view&id=1PwSDGg2sFamJzQZ4yP9pGczE4A0WVHUX" download className="text-text-secondary hover:text-white transition-colors">Inversionistas</a></li>
             </ul>
@@ -63,7 +91,12 @@ const Footer = () => {
           <div>
             <h4 className="font-orbitron font-bold mb-4 text-neon-purple">Soporte</h4>
             <ul className="space-y-3 text-sm">
-              <li><a href="#faq" className="text-text-secondary hover:text-white transition-colors">FAQ</a></li>
+              <li>
+                <FaqModal
+                    trigger={
+                      <a href="javascript:void(0)" className="text-text-secondary hover:text-white transition-colors">Preguntas Frecuentes</a>                    }
+                />
+              </li>
               <li>
                 <a href="mailto:reclutame@legendslatam.com" className="text-text-secondary hover:text-white transition-colors">
                   reclutame@legendslatam.com
@@ -76,8 +109,16 @@ const Footer = () => {
         {/* Legal Links */}
         <div className="border-t border-white/10 pt-8 mb-8">
           <div className="flex flex-wrap justify-center gap-6 text-sm text-text-secondary">
-            <a href="#terms" className="hover:text-white transition-colors">Términos de Servicio</a>
-            <a href="#privacy" className="hover:text-white transition-colors">Política de Privacidad</a>
+            <TermsModal
+                trigger={
+                  <a href="#terms" className="hover:text-white transition-colors">Términos de Servicio</a>
+                }
+            />
+            <PrivacyModal
+                trigger={
+                  <a href="#privacy" className="hover:text-white transition-colors">Política de Privacidad</a>
+                }
+            />
           </div>
         </div>
 
