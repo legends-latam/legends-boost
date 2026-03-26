@@ -14,7 +14,7 @@ import dota from '@/assets/dota.svg';
 import lol from '@/assets/lol.webp';
 import valorant from '@/assets/valorant.webp';
 import cs2 from '@/assets/cs2.webp';
-import BetaSignupModal from "@/components/BetaSignupModal.tsx";
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   const highlights = [
@@ -134,14 +134,12 @@ const HeroSection = () => {
 
         {/* Secondary CTA */}
         <div className="mb-12">
-          <BetaSignupModal
-              trigger={
-                <Button className="btn-hero pulse-glow whitespace-nowrap">
-                  <Download className="w-4 h-4" />
-                  Descarga GRATIS
-                </Button>
-              }
-          />
+          <Button asChild className="btn-hero pulse-glow whitespace-nowrap">
+            <Link to="/descargas">
+              <Download className="w-4 h-4" />
+              Descarga GRATIS
+            </Link>
+          </Button>
           <p className="text-sm text-text-muted mt-2 flex items-center justify-center gap-2">
             Compatible para Windows, Mac y Linux
           </p>

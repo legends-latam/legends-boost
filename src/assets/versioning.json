@@ -1,0 +1,59 @@
+{
+  "version": "0.3.2",
+  "channel": "stable",
+  "updatedAt": "2026-03-26",
+  "summary": "Build oficial de Legends con instaladores para Windows, macOS y Linux.",
+  "platforms": {
+    "windows": {
+      "label": "Windows",
+      "description": "Instalador recomendado para Windows 10 y 11.",
+      "accent": "green",
+      "downloads": [
+        {
+          "name": "Windows x64",
+          "architecture": "Intel / AMD 64-bit",
+          "format": "EXE",
+          "url": "https://github.com/legends-latam/legendslatam/releases/download/v0.3.2/Legends_0.3.2_x64_en-US.msi"
+        }
+      ]
+    },
+    "mac": {
+      "label": "macOS",
+      "description": "Descargas separadas para Apple Silicon e Intel.",
+      "accent": "cyan",
+      "downloads": [
+        {
+          "name": "macOS Intel x86",
+          "architecture": "Intel x64",
+          "format": "DMG",
+          "url": "https://github.com/legends-latam/legendslatam/releases/download/v0.3.2/Legends_0.3.2_x64.dmg"
+        },
+        {
+          "name": "macOS ARM",
+          "architecture": "Apple Silicon",
+          "format": "DMG",
+          "url": "https://github.com/legends-latam/legendslatam/releases/download/v0.3.2/Legends_0.3.2_aarch64.dmg"
+        }
+      ]
+    },
+    "linux": {
+      "label": "Linux",
+      "description": "Paquetes listos para Debian, Ubuntu, Fedora y SUSE.",
+      "accent": "purple",
+      "downloads": [
+        {
+          "name": "Debian / Ubuntu",
+          "architecture": "Intel / AMD 64-bit",
+          "format": "DEB",
+          "url": "https://github.com/legends-latam/legendslatam/releases/download/v0.3.2/Legends_0.3.2_amd64.deb"
+        },
+        {
+          "name": "Fedora / SUSE",
+          "architecture": "Intel / AMD 64-bit",
+          "format": "RPM",
+          "url": "https://github.com/legends-latam/legendslatam/releases/download/v0.3.2/Legends-0.3.2-1.x86_64.rpm"
+        }
+      ]
+    }
+  }
+}

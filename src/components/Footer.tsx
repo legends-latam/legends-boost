@@ -7,6 +7,7 @@ import TermsModal from "@/components/TermsModal.tsx";
 import PrivacyModal from "@/components/PrivacyModal.tsx";
 import BetaSignupModal from "@/components/BetaSignupModal.tsx";
 import FaqModal from "@/components/FaqModal.tsx";
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -49,25 +50,19 @@ const Footer = () => {
             <h4 className="font-orbitron font-bold mb-4 text-neon-green">Producto</h4>
             <ul className="space-y-3 text-sm">
               <li>
-              <BetaSignupModal
-                  trigger={
-                    <a href="javascript:void(0)" className="text-text-secondary hover:text-white transition-colors">Descarga Legends</a>
-                  }
-              />
+                <Link to="/descargas" className="text-text-secondary hover:text-white transition-colors">
+                  Descarga Legends
+                </Link>
               </li>
               <li>
-                <BetaSignupModal
-                    trigger={
-                      <a href="javascript:void(0)" className="text-text-secondary hover:text-white transition-colors">Legends SDK</a>
-                    }
-                />
+                <Link to="/descargas" className="text-text-secondary hover:text-white transition-colors">
+                 Legends SDK
+                </Link>
               </li>
               <li>
-                <BetaSignupModal
-                    trigger={
-                      <a href="javascript:void(0)" className="text-text-secondary hover:text-white transition-colors">Changelog</a>
-                    }
-                />
+                <Link to="/descargas" className="text-text-secondary hover:text-white transition-colors">
+                 Changelog
+                </Link>
               </li>
             </ul>
           </div>
@@ -77,10 +72,9 @@ const Footer = () => {
             <h4 className="font-orbitron font-bold mb-4 text-neon-cyan">Compañía</h4>
             <ul className="space-y-3 text-sm">
               <li>
-                <BetaSignupModal
-                    trigger={
-                      <a href="javascript:void(0)" className="text-text-secondary hover:text-white transition-colors">Nuestro Team</a>                    }
-                />
+                <Link to="/descargas" className="text-text-secondary hover:text-white transition-colors">
+                 Nuestro Team
+                </Link>
               </li>
               <li><a href="https://api.whatsapp.com/send?phone=+56933251730" className="text-text-secondary hover:text-white transition-colors" target="_blank">Trabaja con nosotros</a></li>
               <li><a href="https://drive.google.com/uc?export=view&id=1PwSDGg2sFamJzQZ4yP9pGczE4A0WVHUX" download className="text-text-secondary hover:text-white transition-colors">Inversionistas</a></li>
