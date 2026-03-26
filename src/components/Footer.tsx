@@ -2,10 +2,10 @@ import { Github, Twitter, MessageCircle, Youtube, Instagram } from 'lucide-react
 import legendsLogo from '@/assets/logo.png';
 import etmDay from '@/assets/etmday.svg';
 import hubUnab from '@/assets/hub-unab.png';
+import unab from '@/assets/unab.png';
 import TermsModal from "@/components/TermsModal.tsx";
 import PrivacyModal from "@/components/PrivacyModal.tsx";
 import BetaSignupModal from "@/components/BetaSignupModal.tsx";
-import {Button} from "@/components/ui/button.tsx";
 import FaqModal from "@/components/FaqModal.tsx";
 
 const Footer = () => {
@@ -51,7 +51,7 @@ const Footer = () => {
               <li>
               <BetaSignupModal
                   trigger={
-                    <a href="javascript:void(0)" className="text-text-secondary hover:text-white transition-colors">Descarga</a>
+                    <a href="javascript:void(0)" className="text-text-secondary hover:text-white transition-colors">Descarga Legends</a>
                   }
               />
               </li>
@@ -132,6 +132,9 @@ const Footer = () => {
             <div className="flex items-center gap-4 text-sm text-text-secondary">
               <div className="flex items-center gap-2">
                 <div className="flex items-center gap-2 text-xs text-text-muted">
+            </div>
+            <div className="flex items-center gap-2 text-xs text-text-muted">
+              <img src={unab} alt="Universidad Andres Bello" className="h-12 w-auto" />
             </div>
             <div className="flex items-center gap-2 text-xs text-text-muted">
               <img src={etmDay} alt="ETM Day" className="h-10 w-auto" />

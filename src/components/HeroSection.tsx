@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from "@/components/ui/card";
 import heroVideoMp4 from '@/assets/hero.mp4';
@@ -17,30 +17,48 @@ import cs2 from '@/assets/cs2.webp';
 import BetaSignupModal from "@/components/BetaSignupModal.tsx";
 
 const HeroSection = () => {
-  const [userCount, setUserCount] = useState(15247);
-  const [email, setEmail] = useState('');
-  const [playerCount, setPlayerCount] = useState(15247);
-  
+  const highlights = [
+    'App ligera de 38 MB',
+    'Pensado en rendimiento, no reduce FPS',
+    'No genera lags ni aumento de ping. Offline no usa internet',
+    'Anti-Cheat First: no se banea tu cuenta, es 100% legal',
+    'Pensado en tu privacidad',
+    'Disponible para Windows, Mac y Linux',
+  ];
+
+  const [activeHighlightIndex, setActiveHighlightIndex] = useState(0);
+  const [typedHighlight, setTypedHighlight] = useState('');
+  const [isDeletingHighlight, setIsDeletingHighlight] = useState(false);
+
   useEffect(() => {
-    const interval = setInterval(() => {
-      setUserCount(prev => prev + Math.floor(Math.random() * 3));
-    }, 3000);
+    const currentHighlight = highlights[activeHighlightIndex];
 
-    // Simulate live player counter
-    const intervalCounter = setInterval(() => {
-      setPlayerCount(prev => prev + Math.floor(Math.random() * 3));
-    }, 3000);
+    const timeout = window.setTimeout(() => {
+      if (!isDeletingHighlight) {
+        if (typedHighlight === currentHighlight) {
+          setIsDeletingHighlight(true);
+          return;
+        }
+
+        const nextValue = currentHighlight.slice(0, typedHighlight.length + 1);
+        setTypedHighlight(nextValue);
+
+        return;
+      }
+
+      const nextValue = currentHighlight.slice(0, Math.max(typedHighlight.length - 1, 0));
+      setTypedHighlight(nextValue);
+
+      if (nextValue.length === 0) {
+        setIsDeletingHighlight(false);
+        setActiveHighlightIndex((prev) => (prev + 1) % highlights.length);
+      }
+    }, isDeletingHighlight ? (typedHighlight ? 7 : 220) : (typedHighlight === currentHighlight ? 1000 : 52));
+
     return () => {
-      clearInterval(interval);
-      clearInterval(intervalCounter);
-    }
-  }, []);
-
-  const AnimatedCounter = ({ value, suffix }: { value: number; suffix: string }) => (
-    <span className="tabular-nums font-bold text-2xl md:text-3xl text-glow animate-glow-pulse">
-      {value.toLocaleString()}{suffix}
-    </span>
-  );
+      window.clearTimeout(timeout);
+    };
+  }, [activeHighlightIndex, highlights, isDeletingHighlight, typedHighlight]);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -113,7 +131,6 @@ const HeroSection = () => {
             <span className="text-text-muted">CS2 🔒</span>
           </div>
         </div>
-        <p className="text-sm text-text-muted mb-12">Más juegos próximamente</p>
 
         {/* Secondary CTA */}
         <div className="mb-12">
@@ -121,14 +138,51 @@ const HeroSection = () => {
               trigger={
                 <Button className="btn-hero pulse-glow whitespace-nowrap">
                   <Download className="w-4 h-4" />
-                  Descargar para Windows
+                  Descarga GRATIS
                 </Button>
               }
           />
           <p className="text-sm text-text-muted mt-2 flex items-center justify-center gap-2">
-            Descarga la app según tu sistema operativo
+            Compatible para Windows, Mac y Linux
           </p>
         </div>
+
+        <div className="mx-auto mb-12 max-w-5xl">
+          <div className="glass-card border border-neon-cyan/20 bg-bg-secondary/60 p-5 md:p-6">
+            <div className="rounded-2xl border border-white/8 bg-black/30 px-5 py-5 text-left">
+              <div className="mb-3 flex items-center gap-3">
+                <Shield className="h-5 w-5 shrink-0 text-neon-green" />
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-neon-cyan">
+                  Unéte a Legends
+                </p>
+              </div>
+
+              <div className="min-h-[96px] md:min-h-[72px]">
+                <p className="text-xl font-semibold leading-relaxed text-white md:text-2xl">
+                  {typedHighlight}
+                  <span className="ml-1 inline-block h-[1.1em] w-[2px] translate-y-1 animate-pulse bg-neon-green align-middle" />
+                </p>
+              </div>
+
+              <div className="mt-4 flex flex-wrap gap-2">
+                {highlights.map((highlight, index) => (
+                  <span
+                    key={highlight}
+                    className={`rounded-full border px-3 py-1 text-xs transition-colors ${
+                      index === activeHighlightIndex
+                        ? 'border-neon-green/50 bg-neon-green/10 text-neon-green'
+                        : 'border-white/10 bg-white/5 text-text-muted'
+                    }`}
+                  >
+                    {highlight}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
 
         {/* App Preview with Monitor Frame */}
         <div className="mb-16 mt-12">

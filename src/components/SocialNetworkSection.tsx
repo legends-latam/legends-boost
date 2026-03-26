@@ -44,7 +44,7 @@ const SocialNetworkSection = () => {
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-2">Conecta con Jugadores con IA</h3>
+                    <h3 className="text-xl font-bold text-white mb-2">Conecta con otros Jugadores</h3>
                     <p className="text-text-secondary">
                       Encuentra tu match perfecto que se adapte a tu juego, tu rol y compartan objetivos.
                     </p>

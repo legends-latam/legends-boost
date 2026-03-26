@@ -39,8 +39,6 @@ const Index = () => {
       <HeroSection />
       <PersonalizedTrainingSection />
       <SocialNetworkSection />
-      <GamificationSection />
-      <PricingSection />
       <Footer />
     </div>
   );
