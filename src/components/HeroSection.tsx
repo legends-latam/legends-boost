@@ -64,8 +64,8 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Video/Image Background */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={heroBackground} 
+        <img
+          src={heroBackground}
           alt="Dota 2 Gaming Background"
           className="w-full h-full object-cover"
         />
@@ -107,8 +107,8 @@ const HeroSection = () => {
 
         {/* Subheadline */}
         <p className="text-lg md:text-xl text-text-secondary max-w-4xl mx-auto mb-8 leading-relaxed">
-          Legends OS analiza <span className="text-neon-cyan font-bold">+50 variables por partida</span> para 
-          mostrarte EXACTAMENTE qué te impide mejorar. Sin rodeos, sin guías genéricas, 
+          Legends OS analiza <span className="text-neon-cyan font-bold">+50 variables por partida</span> para
+          mostrarte EXACTAMENTE qué te impide mejorar. Sin rodeos, sin guías genéricas,
           solo <span className="text-neon-green font-bold">TU plan personalizado</span>.
         </p>
 
@@ -134,11 +134,9 @@ const HeroSection = () => {
 
         {/* Secondary CTA */}
         <div className="mb-12">
-          <Button asChild className="btn-hero pulse-glow whitespace-nowrap">
-            <Link to="/descargas">
-              <Download className="w-4 h-4" />
-              Descarga GRATIS
-            </Link>
+          <Button className="btn-hero pulse-glow whitespace-nowrap" disabled>
+            <Download className="w-4 h-4" />
+            Próximamente...
           </Button>
           <p className="text-sm text-text-muted mt-2 flex items-center justify-center gap-2">
             Compatible para Windows, Mac y Linux
@@ -166,11 +164,10 @@ const HeroSection = () => {
                 {highlights.map((highlight, index) => (
                   <span
                     key={highlight}
-                    className={`rounded-full border px-3 py-1 text-xs transition-colors ${
-                      index === activeHighlightIndex
-                        ? 'border-neon-green/50 bg-neon-green/10 text-neon-green'
-                        : 'border-white/10 bg-white/5 text-text-muted'
-                    }`}
+                    className={`rounded-full border px-3 py-1 text-xs transition-colors ${index === activeHighlightIndex
+                      ? 'border-neon-green/50 bg-neon-green/10 text-neon-green'
+                      : 'border-white/10 bg-white/5 text-text-muted'
+                      }`}
                   >
                     {highlight}
                   </span>
@@ -180,7 +177,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        
+
 
         {/* App Preview with Monitor Frame */}
         <div className="mb-16 mt-12">
@@ -226,26 +223,26 @@ const HeroSection = () => {
           </div>
         </div>
 
-      {/* Stats Section */}
-      <section className="relative z-10 px-6 lg:px-12 py-16">
-        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          {[
-            { label: "Mayor visibilidad", value: "15%", icon: Users, desc: "para formar equipos" },
-            { label: "Más eficiente", value: "49%", icon: TrendingUp, desc: "vs práctica tradicional" },
-            { label: "Mejora más rápida", value: "27%", icon: Zap, desc: "en GPM & KDA & XPM" },
-            { label: "Satisfacción", value: "92%", icon: BarChart3, desc: "por jugadores entrevistados" }
-          ].map((stat, index) => (
-            <Card key={index} className="glass-card border-neon-green/20 glow-green hover:glow-purple transition-all duration-300">
-              <CardContent className="p-6">
-                <stat.icon className="w-8 h-8 mx-auto mb-2 text-neon-green" />
-                <div className="text-3xl font-bold text-glow mb-1">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
-                <div className="text-xs text-neon-cyan/70 mt-1">{stat.desc}</div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
+        {/* Stats Section */}
+        <section className="relative z-10 px-6 lg:px-12 py-16">
+          <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {[
+              { label: "Mayor visibilidad", value: "15%", icon: Users, desc: "para formar equipos" },
+              { label: "Más eficiente", value: "49%", icon: TrendingUp, desc: "vs práctica tradicional" },
+              { label: "Mejora más rápida", value: "27%", icon: Zap, desc: "en GPM & KDA & XPM" },
+              { label: "Satisfacción", value: "92%", icon: BarChart3, desc: "por jugadores entrevistados" }
+            ].map((stat, index) => (
+              <Card key={index} className="glass-card border-neon-green/20 glow-green hover:glow-purple transition-all duration-300">
+                <CardContent className="p-6">
+                  <stat.icon className="w-8 h-8 mx-auto mb-2 text-neon-green" />
+                  <div className="text-3xl font-bold text-glow mb-1">{stat.value}</div>
+                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                  <div className="text-xs text-neon-cyan/70 mt-1">{stat.desc}</div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
 
       </div>
     </section>
